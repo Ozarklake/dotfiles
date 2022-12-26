@@ -14,4 +14,5 @@ require "user.gitsigns"
 require "user.treesitter"
 require "user.autopairs"
 require "user.feline"
-
+require "user.filetype"
+require "user.autosave"

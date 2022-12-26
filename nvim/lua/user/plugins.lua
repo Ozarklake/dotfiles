@@ -81,6 +81,9 @@ return packer.startup(function(use)
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
   }
+
+  use "Pocco81/auto-save.nvim"
+
   use "p00f/nvim-ts-rainbow"
   use "nvim-treesitter/playground"
 
@@ -94,6 +97,9 @@ return packer.startup(function(use)
   use "feline-nvim/feline.nvim"
 
   use "Mofiqul/dracula.nvim"
+
+  use "nathom/filetype.nvim"
+
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
