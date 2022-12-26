@@ -9,4 +9,5 @@ require "user.bufferline"
 require "user.gitsigns"
 require "user.treesitter"
 require "user.autopairs"
+require "user.feline"
 

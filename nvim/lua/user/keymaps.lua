@@ -82,3 +82,4 @@ keymap("n", "<C-b>", ":NvimTreeToggle<CR>", opts)
 -- bufferline 左右Tab切换
 keymap("n", "<leader>h", ":BufferLineCyclePrev<CR>", opts)
 keymap("n", "<leader>l", ":BufferLineCycleNext<CR>", opts)
+keymap("n", "<C-n>", ":tabnew<cr>", opts)
