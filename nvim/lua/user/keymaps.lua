@@ -83,3 +83,5 @@ keymap("n", "<C-b>", ":NvimTreeToggle<CR>", opts)
 keymap("n", "<leader>h", ":BufferLineCyclePrev<CR>", opts)
 keymap("n", "<leader>l", ":BufferLineCycleNext<CR>", opts)
 keymap("n", "<C-n>", ":tabnew<cr>", opts)
+keymap("n", "<C-q>", ":close<cr>", opts)
+

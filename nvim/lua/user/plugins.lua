@@ -92,13 +92,15 @@ return packer.startup(function(use)
 
   -- Autopairs, integrates with both cmp and treesitter
   use "windwp/nvim-autopairs"
-  -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
-  use "feline-nvim/feline.nvim"
+
+  -- use "feline-nvim/feline.nvim"
+  use "nvim-lualine/lualine.nvim"
 
   use "Mofiqul/dracula.nvim"
 
   use "nathom/filetype.nvim"
+
+  use 'numToStr/Comment.nvim'
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()
