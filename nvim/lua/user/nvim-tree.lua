@@ -11,7 +11,8 @@ if not config_status_ok then
     return
 end
 
-nvim_tree.event = 'VimEnter'
+nvim_tree_config.event = 'VimEnter'
+
 
 local tree_cb = nvim_tree_config.nvim_tree_callback
 

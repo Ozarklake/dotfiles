@@ -7,6 +7,9 @@ end
 
 local actions = require "telescope.actions"
 
+
+telescope.event = 'VimEnter'
+
 telescope.setup {
   defaults = {
 

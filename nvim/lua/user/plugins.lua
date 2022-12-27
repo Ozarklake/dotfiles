@@ -45,19 +45,21 @@ return packer.startup(function(use)
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
 
-  -- Colorschemes
-  -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
-  use "lunarvim/darkplus.nvim"
-
   -- cmp plugins
-  use "hrsh7th/nvim-cmp" -- The completion plugin
+  use ({
+    "hrsh7th/nvim-cmp", -- The completion plugin
+  })
+
   use "hrsh7th/cmp-buffer" -- buffer completions
   use "hrsh7th/cmp-path" -- path completions
   use "hrsh7th/cmp-cmdline" -- cmdline completions
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
 
   -- snippets
-  use "L3MON4D3/LuaSnip" --snippet engine
+  use ({
+    "L3MON4D3/LuaSnip",
+  }) 
+
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
   -- Telescope
@@ -67,7 +69,6 @@ return packer.startup(function(use)
   -- nvim-tree
   use {
       'kyazdani42/nvim-tree.lua',
-      requires = 'kyazdani42/nvim-web-devicons',
   }
 
   use {
@@ -76,18 +77,30 @@ return packer.startup(function(use)
   }
 
   -- Treesitter
-  use "nvim-treesitter/nvim-treesitter"
+  use ({
+    "nvim-treesitter/nvim-treesitter"
+  })
 
-  use "Pocco81/auto-save.nvim"
+  use ({
+    "Pocco81/auto-save.nvim",
+    config = function()
+      require("user.autosave")
+    end,
+  })
 
   use "p00f/nvim-ts-rainbow"
   use "nvim-treesitter/playground"
 
   -- gitsigns
-  use 'lewis6991/gitsigns.nvim'
+  use ({
+    'lewis6991/gitsigns.nvim',
+  })
 
   -- Autopairs, integrates with both cmp and treesitter
-  use "windwp/nvim-autopairs"
+  use ({
+    "windwp/nvim-autopairs",
+  })
+
 
   -- use "feline-nvim/feline.nvim"
   use "nvim-lualine/lualine.nvim"

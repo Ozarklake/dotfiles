@@ -4,4 +4,6 @@ if not status_ok then
   return
 end
 
+lualine.event = 'VimEnter'
+
 lualine.setup({})

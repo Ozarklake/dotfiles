@@ -1,9 +1,11 @@
 local configs = require("nvim-treesitter.configs")
 
-configs.event = 'VimEnter',
-
 configs.setup {
-  ensure_installed = "all",
+  -- ensure_installed = {
+  --   "lua",
+  --   "python",
+  --   "yaml"
+  -- },
   sync_install = false, 
   ignore_install = { "" }, -- List of parsers to ignore installing
   highlight = {
