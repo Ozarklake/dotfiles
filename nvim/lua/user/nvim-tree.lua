@@ -11,10 +11,14 @@ if not config_status_ok then
     return
 end
 
+nvim_tree.event = 'VimEnter'
+
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
 nvim_tree.setup({
   sort_by = "case_sensitive",
+  open_on_setup = false,
+  open_on_setup_file = false,
   view = {
     adaptive_size = true,
     width = 20,

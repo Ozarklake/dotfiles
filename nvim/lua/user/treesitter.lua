@@ -1,4 +1,7 @@
 local configs = require("nvim-treesitter.configs")
+
+configs.event = 'VimEnter',
+
 configs.setup {
   ensure_installed = "all",
   sync_install = false, 
