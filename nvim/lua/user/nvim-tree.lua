@@ -39,5 +39,3 @@ nvim_tree.setup({
     ignore_list = {},
   },
 })
-
-

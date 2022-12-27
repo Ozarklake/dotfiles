@@ -96,6 +96,8 @@ return packer.startup(function(use)
 
   use 'numToStr/Comment.nvim'
 
+  use "lewis6991/impatient.nvim"
+  
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
