@@ -62,7 +62,6 @@ return packer.startup(function(use)
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
-  use 'nvim-telescope/telescope-media-files.nvim'
   use 'BurntSushi/ripgrep'
 
   -- nvim-tree
@@ -94,8 +93,6 @@ return packer.startup(function(use)
   use "nvim-lualine/lualine.nvim"
 
   use "Mofiqul/dracula.nvim"
-
-  use "nathom/filetype.nvim"
 
   use 'numToStr/Comment.nvim'
 
