@@ -17,6 +17,7 @@ nvim_tree_config.event = 'VimEnter'
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
 nvim_tree.setup({
+  auto_close = true,
   sort_by = "case_sensitive",
   open_on_setup = false,
   open_on_setup_file = false,

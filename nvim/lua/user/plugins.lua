@@ -47,13 +47,34 @@ return packer.startup(function(use)
 
   -- cmp plugins
   use ({
-    "hrsh7th/nvim-cmp", -- The completion plugin
+    "hrsh7th/nvim-cmp", 
+    event = "InsertEnter",
+    config = function()
+      require("user.cmp")
+    end
+
   })
 
-  use "hrsh7th/cmp-buffer" -- buffer completions
-  use "hrsh7th/cmp-path" -- path completions
-  use "hrsh7th/cmp-cmdline" -- cmdline completions
-  use "saadparwaiz1/cmp_luasnip" -- snippet completions
+
+  use ({
+    "hrsh7th/cmp-buffer",
+    after = "nvim-cmp"
+  })
+
+  use ({
+    "hrsh7th/cmp-path",
+    after = "nvim-cmp"
+  })
+
+  use ({
+    "hrsh7th/cmp-cmdline",
+    after = "nvim-cmp"
+  })
+
+  use ({
+    "saadparwaiz1/cmp_luasnip",
+    after = "nvim-cmp"
+  })
 
   -- snippets
   use ({
@@ -63,26 +84,44 @@ return packer.startup(function(use)
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
   -- Telescope
-  use "nvim-telescope/telescope.nvim"
+  use ({
+    "nvim-telescope/telescope.nvim",
+    cmd="Telescope"
+  })
+
   use 'BurntSushi/ripgrep'
 
+  use "kyazdani42/nvim-web-devicons"
   -- nvim-tree
   use {
-      'kyazdani42/nvim-tree.lua',
+    'kyazdani42/nvim-tree.lua',
+    requires = 'kyazdani42/nvim-web-devicons',
+    cmd=":NvimTreeToggle",
+    config = function()
+      require("user.nvim-tree")
+    end
   }
 
   use {
-      'akinsho/bufferline.nvim',
-      requires = 'kyazdani42/nvim-web-devicons'
+    'akinsho/bufferline.nvim',
+    event = "BufWinEnter",
+    config = function()
+      require("user.bufferline")
+    end
   }
 
   -- Treesitter
   use ({
-    "nvim-treesitter/nvim-treesitter"
+    "nvim-treesitter/nvim-treesitter",
+    event = "BufWinEnter",
+    config = function()
+      require("user.treesitter")
+    end
   })
 
   use ({
     "Pocco81/auto-save.nvim",
+    event = "InsertEnter",
     config = function()
       require("user.autosave")
     end,
@@ -94,20 +133,41 @@ return packer.startup(function(use)
   -- gitsigns
   use ({
     'lewis6991/gitsigns.nvim',
+    event = "BufWinEnter",
+    config = function()
+      require("user.gitsigns")
+    end
   })
 
   -- Autopairs, integrates with both cmp and treesitter
   use ({
     "windwp/nvim-autopairs",
+    event = "BufWinEnter",
+    config = function()
+      require("user.autopairs")
+    end
   })
 
 
-  -- use "feline-nvim/feline.nvim"
-  use "nvim-lualine/lualine.nvim"
+  use ({
+    "nvim-lualine/lualine.nvim",
+    event = "BufWinEnter",
+    config = function()
+      require("user.lualine")
+    end
+  }) 
 
-  use "Mofiqul/dracula.nvim"
+  use ({
+    "numToStr/Comment.nvim",
+    event = "BufWinEnter",
+    config = function()
+      require("user.comment")
+    end
+  }) 
 
-  use 'numToStr/Comment.nvim'
+  use ({
+    "Mofiqul/dracula.nvim",
+  }) 
 
   use "lewis6991/impatient.nvim"
   
