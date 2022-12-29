@@ -86,17 +86,22 @@ return packer.startup(function(use)
   -- Telescope
   use ({
     "nvim-telescope/telescope.nvim",
-    cmd="Telescope"
+    event = "BufWinEnter",
+    -- cmd = "Telescope"
   })
 
-  use 'BurntSushi/ripgrep'
+  use ({
+    "BurntSushi/ripgrep",
+    event = "BufWinEnter",
+    -- after = "telescope"
+  })
 
   use "kyazdani42/nvim-web-devicons"
   -- nvim-tree
   use {
     'kyazdani42/nvim-tree.lua',
     requires = 'kyazdani42/nvim-web-devicons',
-    cmd="NvimTreeToggle",
+    cmd = "NvimTreeToggle",
     config = function()
       require("user.nvim-tree")
     end
