@@ -87,7 +87,10 @@ return packer.startup(function(use)
   use ({
     "nvim-telescope/telescope.nvim",
     event = "BufWinEnter",
-    -- cmd = "Telescope"
+    cmd=":Telescope",
+    config = function()
+      require("user.telescope")
+    end
   })
 
   use ({

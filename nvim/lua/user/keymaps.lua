@@ -1,3 +1,6 @@
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
 local opts = { noremap = true, silent = true }
 
 local term_opts = { silent = true }
@@ -7,8 +10,14 @@ local keymap = vim.api.nvim_set_keymap
 
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+
+-- delete without copy
+keymap("", "x", "\"_x", opts)
+keymap("", "d", "\"_d", opts)
+keymap("", "dd", "\"_dd", opts)
+keymap("", "D", "\"_D", opts)
+
+
 
 -- Modes
 --   normal_mode = "n",
