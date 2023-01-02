@@ -48,7 +48,7 @@ return packer.startup(function(use)
   -- cmp plugins
   use ({
     "hrsh7th/nvim-cmp", 
-    event = "InsertEnter",
+    event = "BufWinEnter",
     config = function()
       require("user.cmp")
     end
@@ -178,6 +178,11 @@ return packer.startup(function(use)
   }) 
 
   use "lewis6991/impatient.nvim"
+
+  use ({
+    "nathangrigg/vim-beancount",
+    event = "BufWinEnter",
+  })
   
   if PACKER_BOOTSTRAP then
     require("packer").sync()
